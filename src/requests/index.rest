@@ -1,1 +1,4 @@
 GET http://localhost:4000
+
+### Get request to deployed heroku API
+GET https://stormy-garden-32374.herokuapp.com
