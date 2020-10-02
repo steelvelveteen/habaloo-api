@@ -1,4 +1,8 @@
-GET http://localhost:4000/users
+GET https://stormy-garden-32374.herokuapp.com/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
+
+## Get request to deployed heroku API
+GET https://stormy-garden-32374.herokuapp.com/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
 
 ### // Signup new user: email and password
@@ -17,4 +21,13 @@ Content-Type: application/json
 {
     "email": "dummy@gmail.com",
     "password": "dummy7890"
+}
+
+### // Signup new user: email and password to heroku
+POST https://stormy-garden-32374.herokuapp.com/users/signup
+Content-Type: application/json
+
+{
+    "email": "dummy2@gmail.com",
+    "password": "dummy27890"
 }
