@@ -1,7 +1,7 @@
-GET https://stormy-garden-32374.herokuapp.com/users
+GET http://localhost:4000/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
 
-## Get request to deployed heroku API
+### Get request to deployed heroku API
 GET https://stormy-garden-32374.herokuapp.com/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
 
