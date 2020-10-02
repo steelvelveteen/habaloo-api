@@ -1,9 +1,30 @@
-import express, { Request, Response } from 'express';
-const app = express()
-const PORT: string | number = process.env.PORT || 5000;
+import http from 'http';
+import { app } from './app';
+require('dotenv/config');
+import mongoose from 'mongoose';
 
-app.use("*", (_: Request, res: Response) => {
-    res.send("<h1>Welcome to your simple server! Awesome right</h1>");
+const PORT = process.env.PORT || 4000;
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+    console.log(`Listening on Port: ${PORT}`);
 });
 
-app.listen(PORT, () => console.log(`hosting @${PORT}`));
+const uri = process.env.HABALOO_DB_URI;
+
+if (uri !== undefined) {
+    mongoose.connect(
+        uri.toString(),
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        },
+        () => {
+            console.log('Connected to MongoDB on ATLAS ..')
+        }
+    );
+} else {
+    console.log('Error. Connection string not found');
+}
+
