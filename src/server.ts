@@ -12,19 +12,35 @@ server.listen(PORT, () => {
 
 const uri = process.env.HABALOO_DB_URI;
 
-if (uri !== undefined) {
-    mongoose.connect(
-        uri.toString(),
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true
-        },
-        () => {
-            console.log('Connected to MongoDB on ATLAS ..')
+uri && mongoose.connect(uri.toString(),
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true
+    },
+    (err) => {
+        if (err) {
+            console.log(err.message);
+            console.log(err);
         }
-    );
-} else {
-    console.log('Error. Connection string not found');
-}
+        else {
+            console.log('Connected to MongoDB Atlas');
+        }
+    })
+
+// if (uri !== undefined) {
+//     mongoose.connect(
+//         uri.toString(),
+//         {
+//             useNewUrlParser: true,
+//             useUnifiedTopology: true,
+//             useCreateIndex: true
+//         },
+//         () => {
+//             console.log('Connected to MongoDB on ATLAS ..')
+//         }
+//     );
+// } else {
+//     console.log('Error. Connection string not found');
+// }
 
