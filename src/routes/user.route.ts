@@ -11,7 +11,7 @@ const router: Router = express.Router();
 router.get('/', cors(), userController.getAllUsers);
 
 router.post(
-    '/signup',
+    '/register',
     [check('email').isEmail(), check('password').isLength({ min: 8 })],
     userController.signup
 );
