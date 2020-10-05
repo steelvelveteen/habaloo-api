@@ -28,6 +28,15 @@ POST https://stormy-garden-32374.herokuapp.com/users/signup
 Content-Type: application/json
 
 {
-    "email": "dummy3@gmail.com",
-    "password": "dummy37890"
+    "email": "sonoya@gmail.com",
+    "password": "quicksilver75"
+}
+
+### // Signup new user: email and password to heroku
+POST https://stormy-garden-32374.herokuapp.com/users/signup
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver_74"
 }
