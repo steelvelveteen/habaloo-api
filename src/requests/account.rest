@@ -1,0 +1,11 @@
+### Create new account details
+POST http://localhost:4000/accounts/createaccount
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "username": "steelvelveteen",
+    "firstname": "Joey",
+    "lastname": "Vico",
+    "country": "Australia"
+}

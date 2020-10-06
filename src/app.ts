@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import indexRouter from './routes/index';
 import userRouter from './routes/user.route';
 import loginRouter from './routes/login.route';
+import accountRouter from './routes/account.route';
 
 export const app: Express = express();
 // export const app: Application = express();
@@ -15,6 +16,7 @@ app.use(morgan('dev'));
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/login', loginRouter);
+app.use('/accounts', accountRouter);
 
 /** Error handling */
 interface ResponseError extends Error {
