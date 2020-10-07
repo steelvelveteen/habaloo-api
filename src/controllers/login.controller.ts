@@ -10,6 +10,7 @@ const login = async (req: Request, res: Response) => {
             const token = generateToken(req.body.email);
             res.status(202).json({
                 message: 'Login successful',
+                email: user.email,
                 token
             })
         } else {
