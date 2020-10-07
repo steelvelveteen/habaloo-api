@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import * as userController from '../controllers/user.controller';
 import * as loginController from '../controllers/login.controller';
+import * as accountController from '../controllers/account.controller';
 // import { checkAuth } from '../middleware/check-auth.middleware';
 import { check } from 'express-validator';
 import cors from 'cors';
@@ -17,5 +18,6 @@ router.post(
 );
 
 router.post('/login', loginController.login);
+router.post('/createaccount', accountController.createaccount);
 
 export default router;
