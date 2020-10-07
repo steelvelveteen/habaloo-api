@@ -26,21 +26,6 @@ uri && mongoose.connect(uri.toString(),
         else {
             console.log('Connected to MongoDB Atlas');
         }
-    })
+    });
 
-// if (uri !== undefined) {
-//     mongoose.connect(
-//         uri.toString(),
-//         {
-//             useNewUrlParser: true,
-//             useUnifiedTopology: true,
-//             useCreateIndex: true
-//         },
-//         () => {
-//             console.log('Connected to MongoDB on ATLAS ..')
-//         }
-//     );
-// } else {
-//     console.log('Error. Connection string not found');
-// }
 

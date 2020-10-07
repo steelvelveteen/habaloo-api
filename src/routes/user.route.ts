@@ -1,5 +1,6 @@
 import express, { Router } from 'express';
 import * as userController from '../controllers/user.controller';
+import * as loginController from '../controllers/login.controller';
 // import { checkAuth } from '../middleware/check-auth.middleware';
 import { check } from 'express-validator';
 import cors from 'cors';
@@ -14,5 +15,7 @@ router.post(
     [check('email').isEmail(), check('password').isLength({ min: 8 })],
     userController.signup
 );
+
+router.post('/login', loginController.login);
 
 export default router;

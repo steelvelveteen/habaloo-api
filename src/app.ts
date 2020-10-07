@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 /** Imported routes */
 
 app.use(morgan('dev'));
-app.use('/', indexRouter);
+app.use('/', indexRouter); // This is here for testing alone
 app.use('/users', userRouter);
 app.use('/login', loginRouter);
 app.use('/accounts', accountRouter);
