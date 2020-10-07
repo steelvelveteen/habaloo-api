@@ -13,7 +13,9 @@ router.get('/', cors(), userController.getAllUsers);
 
 router.post(
     '/signup',
-    [check('email').isEmail(), check('password').isLength({ min: 8 })],
+    [
+        check('email').isEmail().withMessage('Please enter a valid email'),
+        check('password').isLength({ min: 8 }).withMessage("Password must be at least 8 characters long.")],
     userController.signup
 );
 
