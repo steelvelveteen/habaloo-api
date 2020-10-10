@@ -1,51 +1,6 @@
-GET http://localhost:4000/users
+GET http://localhost:8080/user
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
 
 ### Get request to deployed heroku API
-GET https://stormy-garden-32374.herokuapp.com/users
+GET https://stormy-garden-32374.herokuapp.com/user
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
-
-### // Signup new user: email and password
-POST http://localhost:4000/users/signup
-Content-Type: application/json
-
-{
-    "email": "sonoya@gmail.com",
-    "password": "quicksilver75"
-}
-
-### // Signup ERROR test: password is not min 8
-POST http://localhost:4000/users/signup
-Content-Type: application/json
-
-{
-    "email":"dummyfgmail.com",
-    "password":"short"
-}
-
-### // Signup new user: email and password
-POST http://localhost:4000/users/signup
-Content-Type: application/json
-
-{
-    "email": "dummy@gmail.com",
-    "password": "dummy7890"
-}
-
-### // Signup new user: email and password to heroku
-POST https://stormy-garden-32374.herokuapp.com/users/signup
-Content-Type: application/json
-
-{
-    "email": "sonoya@gmail.com",
-    "password": "quicksilver75"
-}
-
-### // Signup new user: email and password to heroku
-POST https://stormy-garden-32374.herokuapp.com/users/signup
-Content-Type: application/json
-
-{
-    "email": "joeyvico@gmail.com",
-    "password": "quicksilver_74"
-}

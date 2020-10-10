@@ -1,0 +1,81 @@
+### Generate token for legal login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver74"
+}
+
+### // Login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+    "email": "sonoya@gmail.com",
+    "password": "quicksilver75"
+}
+
+### // Login
+POST https://stormy-garden-32374.herokuapp.com/auth/login
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver74"
+}
+
+### // Signup new user: email and password
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver74"
+}
+
+### // Signup new user: email and password
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+    "email": "sonoya@gmail.com",
+    "password": "quicksilver75"
+}
+
+### // Signup ERROR test: password is not min 8
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+    "email":"dummyfgmail.com",
+    "password":"short"
+}
+
+### // Signup new user: email and password
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+    "email": "dummy@gmail.com",
+    "password": "dummy7890"
+}
+
+
+### // Signup new user: email and password to heroku
+POST https://stormy-garden-32374.herokuapp.com/auth/signup
+Content-Type: application/json
+
+{
+    "email": "sonoya@gmail.com",
+    "password": "quicksilver75"
+}
+
+### // Signup new user: email and password to heroku
+POST https://stormy-garden-32374.herokuapp.com/auth/signup
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver_74"
+}

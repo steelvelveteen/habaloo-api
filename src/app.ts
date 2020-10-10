@@ -1,7 +1,9 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
 import indexRouter from './routes/index';
+import authRouter from './routes/auth.route';
 import userRouter from './routes/user.route';
+
 
 export const app: Express = express();
 
@@ -11,7 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 /** Imported routes */
 app.use(morgan('dev'));
 app.use('/', indexRouter); // This is here for testing alone
-app.use('/users', userRouter);
+app.use('/auth', authRouter); //login and signup
+app.use('/user', userRouter); // getall users and create account
 
 /** Error handling */
 interface ResponseError extends Error {
