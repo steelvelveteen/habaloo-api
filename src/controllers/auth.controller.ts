@@ -18,7 +18,8 @@ const login = async (req: Request, res: Response) => {
             })
         } else {
             res.status(401).json({
-                message: 'Unauthorized. Username or email is wrong.'
+                message: ['The username or password you have enterd is wrong.',
+                    'Please try again']
             });
         }
     } catch (error) {
