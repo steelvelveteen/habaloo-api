@@ -13,5 +13,6 @@ router.post(
 );
 
 router.post('/login', authController.login);
+router.post('/resetPassword', authController.resetPassword);
 
 export default router;

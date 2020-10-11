@@ -79,3 +79,21 @@ Content-Type: application/json
     "email": "joeyvico@gmail.com",
     "password": "quicksilver_74"
 }
+
+### // Reset password given user email and new password
+POST http://localhost:8080/auth/resetPassword
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "newPassword": "quicksilver_74"
+}
+
+### // Login
+POST  http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver_74"
+}

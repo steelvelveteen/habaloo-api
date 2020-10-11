@@ -70,6 +70,33 @@ const signup = async (req: Request, res: Response) => {
     }
 };
 
+const resetPassword = async (req: Request, res: Response) => {
+    try {
+        console.log(req.body);
+        const user = await User.findOne({ email: req.body.email });
+        if (user) {
+            const salt = await bcrypt.genSalt();
+            const hashedPassword = await bcrypt.hash(req.body.newPassword, salt);
+            user.password = hashedPassword;
+            await user.save();
+            res.status(201).json({
+                message: 'Password successfully updated',
+                user: {
+                    message: 'Login success',
+                    user_id: user._id,
+                    email: user.email,
+                }
+            });
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            message: 'Could not reset password.',
+            error
+        })
+    }
+}
+
 const validateEmailExists = async (useremail: string) => {
     let user = null;
     user = await User.findOne({ email: useremail }).exec();
@@ -90,4 +117,4 @@ const generateToken = (useremail: string) => {
     }
 };
 
-export { login, signup };
+export { login, signup, resetPassword };
