@@ -4,3 +4,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa
 ### Get request to deployed heroku API
 GET https://stormy-garden-32374.herokuapp.com/user
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
+
+### Get request to deployed docker API
+GET http://localhost:49160/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9leXZpY29AZ21haWwuY29t.q3KyV9cSOkoa_JUiCBVDhzTltyA8GWyLC3evK8Ek6gE
