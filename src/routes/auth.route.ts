@@ -13,6 +13,9 @@ router.post(
 );
 
 router.post('/login', authController.login);
-router.post('/resetPassword', authController.resetPassword);
+
+router.post('/resetPassword', [
+    check('password').isLength({ min: 8 }).withMessage("Password must be at least 8 characters long.")],
+    authController.resetPassword);
 
 export default router;
