@@ -11,7 +11,7 @@ const login = async (req: Request, res: Response) => {
         if (user && (await bcrypt.compare(req.body.password, user.password))) {
             const token = generateToken(req.body.email);
             res.status(202).json({
-                message: 'Login successful',
+                message: 'Login success',
                 user_id: user._id,
                 email: user.email,
                 token
@@ -59,7 +59,6 @@ const signup = async (req: Request, res: Response) => {
                 user: {
                     user_id: result._id,
                     email: result.email,
-                    // password: result.password
                 }
             });
         }
@@ -70,7 +69,6 @@ const signup = async (req: Request, res: Response) => {
         });
     }
 };
-
 
 const validateEmailExists = async (useremail: string) => {
     let user = null;
