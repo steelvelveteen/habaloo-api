@@ -10,7 +10,7 @@ const login = async (req: Request, res: Response) => {
         const user = await User.findOne({ email: req.body.email });
         if (user && (await bcrypt.compare(req.body.password, user.password))) {
             const token = generateToken(req.body.email);
-            res.status(202).json({
+            res.status(200).json({
                 message: 'Login success',
                 user_id: user._id,
                 email: user.email,
@@ -24,7 +24,7 @@ const login = async (req: Request, res: Response) => {
         }
     } catch (error) {
         res.status(500).json({
-            message: 'There was a problem logging in. Try again later.',
+            message: ['There was a problem logging in. Try again later.'],
             error
         })
     }
@@ -56,7 +56,7 @@ const signup = async (req: Request, res: Response) => {
 
             const result = await user.save();
             res.status(201).json({
-                message: 'User successfully created',
+                message: 'User successfully created 2',
                 user: {
                     user_id: result._id,
                     email: result.email,
