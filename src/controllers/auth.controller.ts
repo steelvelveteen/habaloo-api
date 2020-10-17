@@ -18,13 +18,12 @@ const login = async (req: Request, res: Response) => {
             })
         } else {
             res.status(401).json({
-                message: ['The username or password you have enterd is wrong.',
-                    'Please try again']
+                message: 'The username or password you have enterd is wrong. Please try again'
             });
         }
     } catch (error) {
         res.status(500).json({
-            message: ['There was a problem logging in. Try again later.'],
+            message: 'There was a problem logging in. Try again later.',
             error
         })
     }
@@ -32,9 +31,14 @@ const login = async (req: Request, res: Response) => {
 
 const signup = async (req: Request, res: Response) => {
     const errors = validationResult(req);
+    let message: string[] = [];
+
     if (!errors.isEmpty()) {
+        errors.array().forEach(e => message.push(e.msg));
+        let singleMessage = message.join('. ');
         res.status(422).json({
-            error: errors.array()
+            // error: errors.array(),
+            message: singleMessage
         });
 
         return;

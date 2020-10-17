@@ -34,6 +34,15 @@ Content-Type: application/json
     "password": "quicksilver74"
 }
 
+### // Signup new user: email and password to fail
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+    "email": "joeyvicogmailcom",
+    "password": "quicksilver75"
+}
+
 ### // Signup new user: email and password
 POST http://localhost:8080/auth/signup
 Content-Type: application/json
