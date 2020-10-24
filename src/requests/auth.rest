@@ -106,3 +106,12 @@ Content-Type: application/json
     "email": "joeyvico@gmail.com",
     "password": "quicksilver_74"
 }
+
+### // Login on Docker running on PORT 49160
+POST  http://localhost:49160/auth/login
+Content-Type: application/json
+
+{
+    "email": "joeyvico@gmail.com",
+    "password": "quicksilver74"
+}

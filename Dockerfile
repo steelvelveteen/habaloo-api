@@ -1,3 +1,7 @@
+### Instructions
+# docker build -t joeyvico/hubaloo-api-docker .
+# docker container run --publish 49160:8080 -d joeyvico/hubaloo-api-docker
+###
 FROM node:12.18.1
 
 WORKDIR /usr/src
